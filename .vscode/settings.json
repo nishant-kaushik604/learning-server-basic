@@ -1,3 +1,6 @@
 {
-    "cmake.configureOnOpen": true
+    "cmake.configureOnOpen": true,
+    "cmake.configureSettings": {
+             "CMAKE_TOOLCHAIN_FILE": "/Users/nishant.kaushik/vcpkg/scripts/buildsystems/vcpkg.cmake"
+    }
 }
