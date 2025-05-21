@@ -1,1 +1,5 @@
-build/ vcpkg/ *.o *.a *.exe
+build/ 
+vcpkg/ 
+*.o 
+*.a 
+*.exe
