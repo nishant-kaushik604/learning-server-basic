@@ -3,3 +3,4 @@ vcpkg/
 *.o 
 *.a 
 *.exe
+Questions.txt
