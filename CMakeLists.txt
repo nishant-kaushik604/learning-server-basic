@@ -8,6 +8,7 @@ cmake_minimum_required(VERSION 3.15)
     find_package(httplib CONFIG REQUIRED)
     find_package(nlohmann_json CONFIG REQUIRED)
     find_package(CURL CONFIG REQUIRED )
+    find_package(Boost REQUIRED COMPONENTS asio)
 
     # Include common directory for headers
     include_directories(${CMAKE_SOURCE_DIR}/common)
@@ -23,3 +24,7 @@ cmake_minimum_required(VERSION 3.15)
     #Build test client
     add_executable(test_client src/test_client.cpp)
     target_link_libraries(test_client PRIVATE http_client)
+
+    # Build TCP echo server
+    add_executable(tcp_echo_server common/network/tcp_echo_server.cpp)
+    target_link_libraries(tcp_echo_server PRIVATE Boost::asio)
