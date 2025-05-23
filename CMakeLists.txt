@@ -28,3 +28,6 @@ cmake_minimum_required(VERSION 3.15)
     # Build TCP echo server
     add_executable(tcp_echo_server common/network/tcp_echo_server.cpp)
     target_link_libraries(tcp_echo_server PRIVATE Boost::asio)
+
+    add_executable(test_tcp_client src/test_tcp_client.cpp)
+    target_link_libraries(test_tcp_client PRIVATE Boost::asio)

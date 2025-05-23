@@ -1,4 +1,5 @@
 #include <boost/asio.hpp>
+#include <iostream>
 
 using boost::asio::ip::tcp;
 
@@ -8,6 +9,11 @@ public:
     
     void start(){
         do_read();
+    }
+
+
+    ~TcpSession(){
+        std::cout << "Session closed" << std::endl;
     }
 
 private:
@@ -37,7 +43,6 @@ private:
             }
         );
     }
-
     tcp::socket socket_;
     enum {max_length = 1024};
     char data_[max_length];
